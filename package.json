@@ -1,0 +1,24 @@
+{
+  "name": "post_body",
+  "version": "1.0.0",
+  "description": "Testing out BodyParser in express in depth. <br />",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dannycho7/post_body.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dannycho7/post_body/issues"
+  },
+  "homepage": "https://github.com/dannycho7/post_body#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2"
+  }
+}
