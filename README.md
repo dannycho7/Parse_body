@@ -1,3 +1,3 @@
-Testing out BodyParser in express in depth. <br />
+# Lower level bodyParser implementation
 
-Specifically looking at urlencoded vs json
+Implementing body-parser functionality through express.
