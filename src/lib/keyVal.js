@@ -3,7 +3,7 @@ module.exports = (data) => {
   let returnData = {};
   for(pair in dataArr){
     let splitPair = dataArr[pair].split('=');
-    // Decoding is very important. Basic level of security
+    // Decoding is VERY important. Basic level of security and is a must for readability
     returnData[decodeURIComponent(splitPair[0])] = decodeURIComponent(splitPair[1]);
   }
   delete data; // Freeing some memory

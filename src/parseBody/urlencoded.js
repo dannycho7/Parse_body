@@ -14,11 +14,11 @@ module.exports = (req, res, next) => {
       console.log("Entered the urlencoded handler");
       let data = "";
       req.on("data", (chunk) => {
-        console.log("Chunk:", chunk);
+        console.log("Chunk received:", chunk);
         data += chunk;
       });
       req.on("end", () => {
-        req.body = keyVal(data);
+        req.body = keyVal(data); // keyVal method converts buffer data to readable json data
         req._body = true;
         return next();
       });
