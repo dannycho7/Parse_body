@@ -3,18 +3,18 @@
  */
 const logger = require('morgan');
 const parseBody = require('./parseBody');
+const path = require('path');
+const express = require('express');
 
 module.exports = (app) => {
 
-  // app.use(logger('dev'));
+  // Middleware
+  app.set('view engine', 'ejs');
+  app.set('views', path.join(__dirname, 'views'));
+  app.use(logger('dev'));
   app.use(parseBody.json());
   app.use(parseBody.urlencoded());
 
-  // Post-parser handler
-  app.use((req, res) => {
-    console.log("Entered catcher");
-    console.log("Request Body:", req.body);
-    res.end();
-  });
-
+  // Initialize routes
+  require('./routes/controller')(app);
 }
