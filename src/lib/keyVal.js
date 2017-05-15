@@ -4,7 +4,7 @@ module.exports = (data) => {
   for(pair in dataArr){
     let splitPair = dataArr[pair].split('=');
     // Decoding is VERY important. Basic level of security and is a must for readability
-    returnData[decodeURIComponent(splitPair[0])] = decodeURIComponent(splitPair[1]);
+    returnData[decodeURIComponent(splitPair[0])] = decodeURIComponent(splitPair[1].replace(/\+/g, ' '));
   }
   delete data; // Freeing some memory
   return returnData;
