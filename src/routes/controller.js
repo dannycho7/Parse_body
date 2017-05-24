@@ -1,4 +1,4 @@
-const formRoute = require('./form');
+const formRoute = require('./formRoute');
 
 module.exports = (app) => {
   app.get('/', (req, res, next) => {
@@ -8,7 +8,7 @@ module.exports = (app) => {
   // Post-parser handler
   app.post("*", (req, res) => {
     console.log("Request Body:", req.body);
-    res.render('form');
+    res.send('done');
   });
 
   app.use('/form', formRoute);
